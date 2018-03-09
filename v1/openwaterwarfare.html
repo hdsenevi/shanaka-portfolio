@@ -1,0 +1,331 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>Shanaka 'SHa' Senevirathne | Programming Portfolio</title>
+    <link rel="stylesheet" type="text/css" media="all" href="style-min.css" />
+    <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,300italic,300,700,700italic|Open+Sans+Condensed:300,700' rel="stylesheet" type='text/css'> -->
+    <!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="style/css/ie8.css" media="all" />
+<![endif]-->
+    <!--[if IE 9]>
+<link rel="stylesheet" type="text/css" href="style/css/ie9.css" media="all" />
+<![endif]-->
+    <script type="text/javascript" src="style/js/min/grand-min.js"></script>
+    <script type="text/javascript">
+        $.backstretch("style/images/bg/1.jpg");
+    </script>
+
+    <!-- SLIDER -->
+    <script src="style/bxslider/plugins/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="style/bxslider/jquery.bxslider.min.js"></script>
+    <link href="style/bxslider/jquery.bxslider.css" rel="stylesheet" />
+
+    <!-- Deffered image loading (below the fold) -->
+    <script>
+        function init() {
+            var imgDefer = document.getElementsByTagName('img');
+            for (var i = 0; i < imgDefer.length; i++) {
+                if (imgDefer[i].getAttribute('data-src')) {
+                    imgDefer[i].setAttribute('src', imgDefer[i].getAttribute('data-src'));
+                }
+            }
+            
+            <!-- Slider -->
+            $(document).ready(function () {
+                $('#video-slider').bxSlider({
+                    pager: false,
+                    mode: 'fade',
+                    auto: false,
+                    autoControls: false,
+                    video: true,
+                    useCSS: false
+                });
+            });
+            $(document).ready(function () {
+                $('#image-slider').bxSlider({
+                    pager: true,
+                    mode: 'fade',
+                    auto: true,
+                    autoControls: false
+                });
+            });
+
+            <!-- Show random other projects -->
+            function shuffle(array) {
+                var currentIndex = array.length,
+                    temporaryValue, randomIndex;
+                // While there remain elements to shuffle...
+                while (0 !== currentIndex) {
+                    // Pick a remaining element...
+                    randomIndex = Math.floor(Math.random() * currentIndex);
+                    currentIndex -= 1;
+
+                    // And swap it with the current element.
+                    temporaryValue = array[currentIndex];
+                    array[currentIndex] = array[randomIndex];
+                    array[randomIndex] = temporaryValue;
+                }
+                return array;
+            }
+
+            $(function () {
+                var people = [];
+                $.getJSON('otherprojs.json', function (data) {
+                    data.otherprojs = shuffle(data.otherprojs);
+                    var noofproj = 0;
+                    $.each(data.otherprojs, function (i, f) {
+                        if (noofproj < 3 && f.projid !== 'oww') {
+                            noofproj = noofproj + 1;
+                            var tblRow = '<li> <div class="frame"> <a href="' + f.urllink + '"><img src="' + f.image + '" /></a> </div> <div class="meta"> <h6><a href="' + f.urllink + '">' + f.title + '</a></h6> <em>' + f.description + '</em> </div> </li>'
+                            $(tblRow).appendTo("#userdata tbody");
+                        }
+                    });
+                });
+            });
+        }
+        window.onload = init;
+    </script>
+
+    <!-- Google analytics code -->
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-32447021-1', 'shanaka.info');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+    <div class="scanlines"></div>
+
+    <!-- Begin Header -->
+    <div class="header-wrapper opacity">
+        <div class="header">
+            <!-- Begin Logo -->
+            <div class="logo">
+                <a href="index.html"> <img src="style/images/logo.png" alt="" /> </a>
+            </div>
+            <!-- End Logo -->
+            <!-- Begin Menu -->
+            <div id="menu-wrapper">
+                <div id="menu" class="menu">
+                    <ul id="tiny">
+                        <li><a href="index.html">Home</a> </li>
+                        <li class="active"><a href="index.html#portfolio">Portfolio</a>
+                            <ul>
+                                <li><a href="icube.html">Moscow iCube</a></li>
+                                <li><a href="hemyca.html">Hemyca</a></li>
+                                <li><a href="ateliermayer.html">Atelier Mayer</a></li>
+                                <li><a href="dunhill.html">OgilvyAction - Dunhill</a></li>
+                                <li><a href="fusion.html">Georg Jensen Fusion</a></li>
+                                <li><a href="holitiondemoshowcase.html">Holition Demo Showcase</a></li>
+                                <li><a href="pgi.html">Platinum Guild</a></li>
+                                <li><a href="peninsula.html">Peninsula</a></li>
+                                <li><a href="rollie.html">Rollie</a></li>
+                                <li><a href="todo360.html">To-Do 360</a></li>
+                                <li><a href="designanathlete.html">Design an athlete</a></li>
+                                <li><a href="dancestar.html">Dance Star</a></li>
+                                <li><a href="openwaterwarfare.html">Serious game for Olympic 2012</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="index.html#cv">CV</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <!-- End Menu -->
+        </div>
+    </div>
+    <!-- End Header -->
+
+    <!-- Begin Wrapper -->
+    <div class="wrapper">
+        <!-- Begin Intro -->
+        <!--<div class="intro">Rollie : a fun filled iOS and Android gravity changing platformer game with amazing visuals and fast-pased gameplay. Currently available in <a href="https://itunes.apple.com/gb/app/rollie-hd/id557592912?mt=8"> Apple app store</a>.</div>
+<ul class="social">
+<li><a class="rss" href="#"></a></li><li><a class="facebook" href="#"></a></li><li><a class="twitter" href="#"></a></li><li><a class="pinterest" href="#"></a></li><li><a class="dribbble" href="#"></a></li><li><a class="flickr" href="#"></a></li><li><a class="linkedin" href="#"></a></li></ul><!-- End Intro -->
+
+        <!-- Begin Container -->
+        <div class="content box">
+            <h1 class="title">Serious game for Olympic 2012 / Open Water Warfare</h1>
+            <p>This is an environment visualization research project developed in collaboration with UK Sports Council and Sheffield Hallam University’s Centre for Sports Engineering Research.</p>
+            <div class="outer none"><span class="inset"><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Main.jpg" alt="" title="" /></span></div>
+            <h3>Introduction</h3>
+            <p>This project was funded through UK Sport’s Ideas4Innovation program; where the objective is to acknowledge and harness outstanding research and innovation concepts for elite sport, generated by the UK's research community, to support the mission to London 2012 and beyond. Due to confidentiality of this project, any information related to its targeted sport, venue of the event or athletes cannot be disclosed until 2012.</p>
+            <h3>Technical Details</h3>
+            <table width="100%" border="0">
+                <tr>
+                    <td width="20%" valign="top">Languages</td>
+                    <td>C/C++, HLSL</td>
+                </tr>
+                <tr>
+                    <td width="20%" valign="top">Libraries</td>
+                    <td>Ogre3D, Hydrax, SkyX, OIS and CEGUI.</td>
+                </tr>
+                <tr>
+                    <td width="20%" valign="top">Tools</td>
+                    <td>Visual studio 2008, 3dsMax, Photoshop.</td>
+                </tr>
+                <tr>
+                    <td width="20%" valign="top">My contribution</td>
+                    <td>I was responsible for water system, terraing system, paging system, sky system, graphical user interface and level editing.</td>
+                </tr>
+            </table>
+            <br>
+            <!--<h3>Gameplay video</h3>
+    <div id="bxslider-outter">
+      <ul id="video-slider">
+        <li>
+          <iframe width="640" height="480" src="http://www.youtube.com/embed/21QsUu5psxM" frameborder="0" allowfullscreen></iframe>
+        </li>
+      </ul>
+    </div>
+    <br>-->
+            <h3>Gameplay images</h3>
+            <div id="bxslider-outter">
+                <ul id="image-slider">
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_07.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_08.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_09.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_10.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_11.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_12.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_13.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_01.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_02.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_03.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_04.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_05.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_06.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_07.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_08.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_09.jpg" /></li>
+                    <li><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_10.jpg" /></li>
+                </ul>
+            </div>
+            <h3>Aim</h3>
+            <p>The aim is to create a simulator to assist open water swimmers in the lead-up to London 2012.</p>
+            <h3>Initial Objectives</h3>
+            <p>* To take the initial prototype animation software developed by the team, to verify 3D positions of landmarks, and to create and install all relevant visual assets;</p>
+            <p>* To create realistic animations of Kerri-Anne Payne and David Davies diving, breathing, swimming and touching the finishing pontoon and insert into the simulator;</p>
+            <p>* To link the simulator to a head-set to be used on a swimming bench such that the user is 'immersed' in the environment and head motion and stroke rates are used in the simulator;
+                <p>* To validate the simulator at training sessions and test events on the Serpentine such that the simulator statistics reflect real speeds and stroke rates. </p>
+                <h3>Development process</h3>
+                <p>The 'Open Water Warfare' application did not have any similar products/related work to research into in order to gain a better understanding of the requirements. Because the end users haven't got any experience with similar software, it was understood that the software requirements are likely to be changed during the development. Hence the development team adhered to an iterative development process which allows developing the application in a step by step process. Since the application is developed in an iterative process, the end users and project managers could test the application during the phase of development and change any initial requirements.</p>
+                <p>The 3D engine and other third-party libraries used in the application are Free and Open Source Software (FOSS). Sheffield Hallam University have the licenses for the commercial tools we have used to develop the application.</p>
+                <h3>Artwork and Animation Breakdown</h3>
+                <p>The main objective of this game was to make the environment or 'game world' look as realistic as possible. 'Open Water Warfare' features art assets that have been modelled and textured according to the rendering engine's requirements.</p>
+                <p>All the art assets have been modelled and textured to look exactly like the buildings and props that are present at the Serpentine Lake. Before the asset creation, the team went down to the venue and took a large number of pictures and video references to aid the 3D artists in the modelling process. As for the textures, the pictorial references have been used during the process. This has been done so that the user gets the feel of realism when he looks at the 3D asset. It also adds to the realism feel of the 'game world'.</p>
+                <p>Ideally for a game to run smoothly, 30 frames per second is considered as an optimal frame rate. For this game to run smooth, it was essential that all the 3D models that were to be used with Ogre 3D, be modelled with less/moderate polygon count. The artist's job was to make sure that the 3D models are created according to the engines requirements. The polygon counts were below 1000 and to make the model look visually appealing the texture sizes and resolutions were increased. In some cases (i.e. trees, benches, tables) only 3D planes were used to create them.</p>
+                <p>On the animation side, it was opted to use motion capture technology to aid the animators. Motion capture has the capabilities of recording high detailed animation sequences which in turn aids the animator to produce accurate animation. For the motion capture process, David Davies' (Beijing 2008 Olympics silver medallist) swimming movements were used to create the sequences. Although the animators did manage to capture satisfactory movements, there was a lot of cleaning up and fine tuning that went into making the swimming animation suitable for the game. Videos of David swimming at Beijing were also used to assist the animators in perfecting the movements of the swimmer. </p>
+                <table width="100%" border="0">
+                    <tr>
+                        <td width="50%">
+                            <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_01.jpg" /></p>
+                            <p>Attaching markers</p>
+                        </td>
+                        <td width="50%">
+                            <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_02.jpg" /></p>
+                            <p>T-Pose capture</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%">
+                            <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_03.jpg" /></p>
+                            <p>Ready to dive</p>
+                        </td>
+                        <td width="50%">
+                            <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_04.jpg" /></p>
+                            <p>Dive on 3D model</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="50%">
+                            <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_05.jpg" /></p>
+                            <p>Lido cafe</p>
+                        </td>
+                        <td width="50%">
+                            <p><img src="data:image/png;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" data-src="src/oww/OWW_Info_06.jpg" /></p>
+                            <p>Boat house</p>
+                        </td>
+                    </tr>
+                </table>
+                <p>Above images show how the motion capture was done to retrieve animation data and the 3D model after the animation data was applied. Some of the assets created for the game world are also displayed.
+                    <br />
+                    <h3>Technical Breakdown</h3>
+                    <p>The application uses and FOSS 3D rendering engine called Ogre3D for rendering and scene graph technologies. This gives the developers to put more focus on the game play elements which was the important factor for the project. The game was developed for the PC platform and needs a dedicated VGA and a modern (i.e. fast) CPU to perform at optimal level.</p>
+                    <p>The program is developed using C++ language. MS Visual Studio 2008 was used as the primary development tool. The application uses DirectX as the rendering subsystem and OpenAL for sound playback. Some other libraries used in the application are: CEGUI, OIS, Hydrax, SkyX and PagedGeometry.</p>
+        </div>
+        <!-- End Container -->
+
+        <!-- Begin Sidebar -->
+        <div class="sidebar box">
+            <div class="sidebox widget">
+                <h3 class="widget-title">Technical Details</h3>
+                <p> <strong>My contribution</strong>
+                    <br> I was responsible for water system, terraing system, paging system, sky system, graphical user interface and level editing.
+                    <br>
+                    <br>
+                    <strong>Languages</strong>
+                    <br> C/C++, HLSL.
+                    <br>
+                    <br>
+                    <strong>Libraries</strong>
+                    <br> Ogre3D, Hydrax, SkyX, OIS and CEGUI.
+                    <br>
+                    <br>
+                    <strong>Tools</strong>
+                    <br> Visual studio 2008, 3dsMax, Photoshop.
+                    <br>
+                </p>
+            </div>
+            <div class="sidebox widget">
+                <h3 id="userdata" class="widget-title">Other projects</h3>
+                <ul class="post-list">
+                    <table id="userdata">
+                        <tbody>
+                        </tbody>
+                    </table>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--End Sidebar -->
+    <div class="clear"></div>
+    </div>
+    <!-- End Wrapper -->
+
+    <!-- Begin Footer -->
+    <div class="footer-wrapper">
+        <div id="footer" class="four">
+            <div id="second" class="widget-area">
+                <div id="twitter-2" class="widget widget_twitter">
+                    <h3 class="widget-title">Twitter</h3>
+                    <div id="twitter-wrapper"> <span class="username"><a href="http://twitter.com/hdsenevi">→ Follow me @hdsenevi</a></span> </div>
+                </div>
+            </div>
+            <!-- #second .widget-area -->
+
+        </div>
+    </div>
+    <div class="site-generator-wrapper">
+        <div class="site-generator">Copyright Shanaka 'SHa' Senevirathne 2013. Design by <a href="http://elemisfreebies.com">elemis</a>. All rights reserved.</div>
+    </div>
+    <!-- End Footer -->
+    <script type="text/javascript" src="style/js/min/scripts-min.js"></script>
+</body>
+
+</html>

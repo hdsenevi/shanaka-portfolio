@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="style/images/favicon.png">
+    <title>Shanaka 'SHa' Senevirathne | Programming Portfolio</title>
+    <!-- Bootstrap core CSS -->
+    <link href="style/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/css/plugins.css" rel="stylesheet">
+    <link href="style/css/prettify.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="style/css/color/blue.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,700,600,500,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+    <link href="style/type/fontello.css" rel="stylesheet">
+    <link href="style/type/budicons.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+        <script src="style/js/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+        <![endif]-->
+    <style>
+        .carousel-inner>.item>img {
+            margin: 0 auto;
+        }
+    </style>
+
+    <!-- Show random other projects -->
+    <script>
+        function shuffle(array) {
+            console.log('shuffle');
+            var currentIndex = array.length,
+                temporaryValue, randomIndex;
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+            return array;
+        }
+
+        function loadOtherProjects() {
+            var people = [];
+            $.getJSON('otherprojs.json', function(data) {
+                data.otherprojs = shuffle(data.otherprojs);
+                var noofproj = 0;
+                $.each(data.otherprojs, function(i, f) {
+                    if (noofproj < 3 && f.projid !== 'oww') {
+                        noofproj = noofproj + 1;
+                        var tblRow = '<li><figure class="frame pull-left"><div class="icon-overlay"><a href="' + f.urllink + '"><img src="' + f.image + '" alt="" /></a></div></figure><div class="meta"><h5><a href="' + f.urllink +
+                            '">' + f.title + '</a></h5><em><span>' + f.description + '</span></em></div></li>'
+                        $(tblRow).appendTo("#userdata");
+                    }
+                });
+            });
+        };
+        window.onload = loadOtherProjects;
+    </script>
+    <!-- Show random other projects -->
+</head>
+
+<body class="full-layout" onload="loadOtherProjects();">
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div class="body-wrapper">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="btn responsive-menu" data-toggle="collapse" data-target=".navbar-collapse"><i></i></a>
+                <div class="navbar-brand text-center">
+                    <a href="index.html">
+                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png" class="retina" />
+                    </a>
+                </div>
+                <!-- /.navbar-brand -->
+            </div>
+            <!-- /.navbar-header -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="./index.html#portfolio">Portfolio</a>
+                    </li>
+                    <li class="current">
+                        <a href="./index.html#portfolio">Project</a>
+                    </li>
+                    <li>
+                        <a href="./downloads.html">Downloads</a>
+                    </li>
+                    <li>
+                        <a href="./index.html#cv">CV</a>
+                    </li>
+                    <li>
+                        <a href="./about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220"><i class="icon-heart-1"></i><span>Elsewhere</span></a>
+                    </li>
+                </ul>
+                <!-- /.navbar-nav -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div id="elsewhere" style="display:none;">
+                <h1>Me, Elsewhere</h1>
+                <div class="divide20"></div>
+                <ul class="social">
+                    <li><a href="http://uk.linkedin.com/in/shanakas"><i class="icon-s-linkedin"></i></a></li>
+                    <li><a href="http://www.twitter.com/hdsenevi"><i class="icon-s-twitter"></i></a></li>
+                    <li><a href="http://www.facebook.com/hdsenevi"><i class="icon-s-facebook"></i></a></li>
+                </ul>
+            </div>
+            <!-- /#elsewhere -->
+        </nav>
+        <!-- /.navbar -->
+        <div class="container inner">
+            <div class="single blog row">
+                <div class="col-md-8 col-sm-12 content">
+                    <div class="blog-posts">
+                        <div class="post box">
+                            <div class="meta">
+                                <span class="category">Professional / Research project</span>
+                                <span class="date">Desktop Application</span>
+                                <span class="comments"><a href="#">Complete <i class="icon-ok-circle"></i></a></span>
+                            </div>
+                            <h2 class="post-title"><a href="#">Serious game for Olympic 2012 / Open Water Warfare</a></h2>
+                            <p>This is an environment visualization research project developed in collaboration with UK Sports Council and Sheffield Hallam University’s Centre for Sports Engineering Research.</p>
+                            <figure class="frame">
+                                <img src="src/oww/OWW_Main.jpg" alt="" />
+                            </figure>
+                            <h3>Introduction</h3>
+                            <p>This project was funded through UK Sport’s Ideas4Innovation program; where the objective is to acknowledge and harness outstanding research and innovation concepts for elite sport, generated by the UK's research community,
+                                to support the mission to London 2012 and beyond. Due to confidentiality of this project, any information related to its targeted sport, venue of the event or athletes cannot be disclosed until 2012.</p>
+                            <h3>Technical Details</h3>
+                            <table width="100%" border="0">
+                                <tr>
+                                    <td width="20%" valign="top">Languages</td>
+                                    <td>C/C++, HLSL</td>
+                                </tr>
+                                <tr>
+                                    <td width="20%" valign="top">Libraries</td>
+                                    <td>Ogre3D, Hydrax, SkyX, OIS and CEGUI.</td>
+                                </tr>
+                                <tr>
+                                    <td width="20%" valign="top">Tools</td>
+                                    <td>Visual studio 2008, 3dsMax, Photoshop.</td>
+                                </tr>
+                                <tr>
+                                    <td width="20%" valign="top">My contribution</td>
+                                    <td>I was responsible for water system, terraing system, paging system, sky system, graphical user interface and level editing.</td>
+                                </tr>
+                            </table>
+                            <br>
+                            <!-- slides -->
+                            <h3>Images</h3>
+                            <div id="imageCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#imageCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="1"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="2"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="3"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="4"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="5"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="6"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="7"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="8"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="9"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="10"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="11"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="12"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="13"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="14"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="15"></li>
+                                    <li data-target="#imageCarousel" data-slide-to="16"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active"><img src="src/oww/OWW_Info_07.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_Info_08.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_Info_09.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_Info_10.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_Info_11.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_Info_12.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_Info_13.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_01.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_02.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_03.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_04.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_05.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_06.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_07.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_08.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_09.jpg" alt=""></div>
+                                    <div class="item"><img src="src/oww/OWW_10.jpg" alt=""></div>
+                                </div>
+
+                                <!-- Left and right controls -->
+                                <a class="left carousel-control" href="#imageCarousel" role="button" data-slide="prev">
+                                    <!-- <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> -->
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="right carousel-control" href="#imageCarousel" role="button" data-slide="next">
+                                    <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                            </br>
+                            <h3>Aim</h3>
+                            <p>The aim is to create a simulator to assist open water swimmers in the lead-up to London 2012.</p>
+                            <h3>Initial Objectives</h3>
+                            <p>* To take the initial prototype animation software developed by the team, to verify 3D positions of landmarks, and to create and install all relevant visual assets;</p>
+                            <p>* To create realistic animations of Kerri-Anne Payne and David Davies diving, breathing, swimming and touching the finishing pontoon and insert into the simulator;</p>
+                            <p>* To link the simulator to a head-set to be used on a swimming bench such that the user is 'immersed' in the environment and head motion and stroke rates are used in the simulator;
+                                <p>* To validate the simulator at training sessions and test events on the Serpentine such that the simulator statistics reflect real speeds and stroke rates. </p>
+                                <h3>Development process</h3>
+                                <p>The 'Open Water Warfare' application did not have any similar products/related work to research into in order to gain a better understanding of the requirements. Because the end users haven't got any experience with similar
+                                    software, it was understood that the software requirements are likely to be changed during the development. Hence the development team adhered to an iterative development process which allows developing the application
+                                    in a step by step process. Since the application is developed in an iterative process, the end users and project managers could test the application during the phase of development and change any initial requirements.</p>
+                                <p>The 3D engine and other third-party libraries used in the application are Free and Open Source Software (FOSS). Sheffield Hallam University have the licenses for the commercial tools we have used to develop the application.</p>
+                                <h3>Artwork and Animation Breakdown</h3>
+                                <p>The main objective of this game was to make the environment or 'game world' look as realistic as possible. 'Open Water Warfare' features art assets that have been modelled and textured according to the rendering engine's
+                                    requirements.
+                                </p>
+                                <p>All the art assets have been modelled and textured to look exactly like the buildings and props that are present at the Serpentine Lake. Before the asset creation, the team went down to the venue and took a large number
+                                    of pictures and video references to aid the 3D artists in the modelling process. As for the textures, the pictorial references have been used during the process. This has been done so that the user gets the feel of
+                                    realism when he looks at the 3D asset. It also adds to the realism feel of the 'game world'.</p>
+                                <p>Ideally for a game to run smoothly, 30 frames per second is considered as an optimal frame rate. For this game to run smooth, it was essential that all the 3D models that were to be used with Ogre 3D, be modelled with less/moderate
+                                    polygon count. The artist's job was to make sure that the 3D models are created according to the engines requirements. The polygon counts were below 1000 and to make the model look visually appealing the texture sizes
+                                    and resolutions were increased. In some cases (i.e. trees, benches, tables) only 3D planes were used to create them.</p>
+                                <p>On the animation side, it was opted to use motion capture technology to aid the animators. Motion capture has the capabilities of recording high detailed animation sequences which in turn aids the animator to produce accurate
+                                    animation. For the motion capture process, David Davies' (Beijing 2008 Olympics silver medallist) swimming movements were used to create the sequences. Although the animators did manage to capture satisfactory movements,
+                                    there was a lot of cleaning up and fine tuning that went into making the swimming animation suitable for the game. Videos of David swimming at Beijing were also used to assist the animators in perfecting the movements
+                                    of the swimmer. </p>
+                                <table width="100%" border="0">
+                                    <tr>
+                                        <td width="50%">
+                                            <p><img src="src/oww/OWW_Info_01.jpg" /></p>
+                                            <p>Attaching markers</p>
+                                        </td>
+                                        <td width="50%">
+                                            <p><img src="src/oww/OWW_Info_02.jpg" /></p>
+                                            <p>T-Pose capture</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="50%">
+                                            <p><img src="src/oww/OWW_Info_03.jpg" /></p>
+                                            <p>Ready to dive</p>
+                                        </td>
+                                        <td width="50%">
+                                            <p><img src="src/oww/OWW_Info_04.jpg" /></p>
+                                            <p>Dive on 3D model</p>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td width="50%">
+                                            <p><img src="src/oww/OWW_Info_05.jpg" /></p>
+                                            <p>Lido cafe</p>
+                                        </td>
+                                        <td width="50%">
+                                            <p><img src="src/oww/OWW_Info_06.jpg" /></p>
+                                            <p>Boat house</p>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <p>Above images show how the motion capture was done to retrieve animation data and the 3D model after the animation data was applied. Some of the assets created for the game world are also displayed.<br />
+                                    <h3>Technical Breakdown</h3>
+                                    <p>The application uses and FOSS 3D rendering engine called Ogre3D for rendering and scene graph technologies. This gives the developers to put more focus on the game play elements which was the important factor for the
+                                        project. The game was developed for the PC platform and needs a dedicated VGA and a modern (i.e. fast) CPU to perform at optimal level.</p>
+                                    <p>The program is developed using C++ language. MS Visual Studio 2008 was used as the primary development tool. The application uses DirectX as the rendering subsystem and OpenAL for sound playback. Some other libraries
+                                        used in the application are: CEGUI, OIS, Hydrax, SkyX and PagedGeometry.</p>
+                        </div>
+                        <!-- /.post -->
+                    </div>
+                    <!-- /.blog-posts -->
+                    <div class="divide20"></div>
+                    <!-- /.about-author -->
+                    <div class="divide20"></div>
+                    <!-- /#comments -->
+                    <div class="divide20"></div>
+                    <!-- /.comment-form-wrapper -->
+                </div>
+                <!-- /.content -->
+                <aside class="col-md-4 col-sm-12 sidebar">
+                    <!-- /.widget -->
+                    <div class="sidebox box widget">
+                        <h3 class="widget-title section-title">Technical Details</h3>
+                        <p> <strong>My contribution</strong><br> I was responsible for water system, terraing system, paging system, sky system, graphical user interface and level editing.<br><br><strong>Languages</strong><br> C/C++, HLSL.<br><br><strong>Libraries</strong><br>                            Ogre3D, Hydrax, SkyX, OIS and CEGUI.<br><br><strong>Tools</strong><br> Visual studio 2008, 3dsMax, Photoshop.<br></p>
+                    </div>
+                    <div class="sidebox box widget">
+                        <h3 class="widget-title section-title">Other projects</h3>
+                        <ul id="userdata" class="post-list">
+                        </ul>
+                        <!-- /.post-list -->
+                    </div>
+                    <!-- /.widget -->
+                    <div class="sidebox box widget">
+                        <h3 class="widget-title section-title">Me, elsewhere</h3>
+                        <p>Find me elsewhere on the web.</p>
+                        <ul class="social">
+                            <li><a href="http://uk.linkedin.com/in/shanakas"><i class="icon-s-linkedin"></i></a></li>
+                            <li><a href="http://www.twitter.com/hdsenevi"><i class="icon-s-twitter"></i></a></li>
+                            <li><a href="http://www.facebook.com/hdsenevi"><i class="icon-s-facebook"></i></a></li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- /.widget -->
+                </aside>
+                <!-- /column .sidebar -->
+            </div>
+            <!-- /.blog -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.body-wrapper -->
+    <script src="style/js/jquery.min.js"></script>
+    <script src="style/js/bootstrap.min.js"></script>
+    <script src="style/js/jquery.themepunch.tools.min.js"></script>
+    <script src="style/js/classie.js"></script>
+    <script src="style/js/plugins.js"></script>
+    <script src="style/js/scripts.js"></script>
+    <script>
+        $.backstretch(["style/images/art/bg2.jpg"]);
+    </script>
+</body>
+
+</html>

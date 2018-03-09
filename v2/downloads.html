@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="style/images/favicon.png">
+    <title>Shanaka 'SHa' Senevirathne | Programming Portfolio</title>
+    <!-- Bootstrap core CSS -->
+    <link href="style/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/css/plugins.css" rel="stylesheet">
+    <link href="style/css/prettify.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="style/css/color/blue.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,700,600,500,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+    <link href="style/type/fontello.css" rel="stylesheet">
+    <link href="style/type/budicons.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+  <script src="style/js/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+    <!-- Show random other projects -->
+    <script>
+        function shuffle(array) {
+            var currentIndex = array.length,
+                temporaryValue, randomIndex;
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+            return array;
+        }
+
+        function loadOtherProjects() {
+            var people = [];
+            $.getJSON('otherprojs.json', function(data) {
+                data.otherprojs = shuffle(data.otherprojs);
+                var noofproj = 0;
+                $.each(data.otherprojs, function(i, f) {
+                    if (noofproj < 3 && f.projid !== '') {
+                        noofproj = noofproj + 1;
+                        var tblRow = '<li><figure class="frame pull-left"><div class="icon-overlay"><a href="' + f.urllink + '"><img src="' + f.image + '" alt="" /></a></div></figure><div class="meta"><h5><a href="' + f.urllink +
+                            '">' + f.title + '</a></h5><em><span>' + f.description + '</span></em></div></li>'
+                        $(tblRow).appendTo("#userdata");
+                    }
+                });
+            });
+        };
+        window.onload = loadOtherProjects;
+    </script>
+    <!-- Show random other projects -->
+</head>
+
+<body class="full-layout" onload="loadOtherProjects();">
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div class="body-wrapper">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="btn responsive-menu" data-toggle="collapse" data-target=".navbar-collapse"><i></i></a>
+                <div class="navbar-brand text-center">
+                    <a href="index.html">
+                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png" class="retina" />
+                    </a>
+                </div>
+                <!-- /.navbar-brand -->
+            </div>
+            <!-- /.navbar-header -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="./index.html#portfolio">Portfolio</a>
+                    </li>
+                    <li class="current">
+                        <a href="./downloads.html">Downloads</a>
+                    </li>
+                    <li>
+                        <a href="./index.html#cv">CV</a>
+                    </li>
+                    <li>
+                        <a href="./about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220"><i class="icon-heart-1"></i><span>Elsewhere</span></a>
+                    </li>
+                </ul>
+                <!-- /.navbar-nav -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div id="elsewhere" style="display:none;">
+                <h1>Me, Elsewhere</h1>
+                <div class="divide20"></div>
+                <ul class="social">
+                    <li><a href="http://uk.linkedin.com/in/shanakas"><i class="icon-s-linkedin"></i></a></li>
+                    <li><a href="http://www.twitter.com/hdsenevi"><i class="icon-s-twitter"></i></a></li>
+                    <li><a href="http://www.facebook.com/hdsenevi"><i class="icon-s-facebook"></i></a></li>
+                </ul>
+            </div>
+            <!-- /#elsewhere -->
+        </nav>
+        <!-- /.navbar -->
+        <div class="container inner">
+            <section id="about">
+                <div class="box">
+                    <h2 class="section-title">App store download links</h2>
+                    <div class="row">
+                        <div class="col-sm-1"></div>
+                        <div class="col-sm-4"></div>
+                        <div class="col-sm-3" align='center'>
+                            <p>On Apple app store</p>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <p>On Google play store</p>
+                        </div>
+                    </div>
+                    <!-- 3DSafety -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="3dsafety.html"><img style="border-radius: 7.5px;" src="src/3dsafety/3DSafety_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="3dsafety.html"> 3D Safety iOS app </a></h5><em><span> iOS application of 3D Safety </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/us/app/3dsafety/id816076338?ls=1&mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <img src="src/cross.png" />
+                        </div>
+                    </div>
+                    <!-- /3DSafety -->
+                    </br>
+                    <!-- Lamer -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="comingsoon.html"><img style="border-radius: 7.5px;" src="src/lamer/LaMer_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="comingsoon.html"> La Mer Virtual Expert </a></h5><em><span> iOS & android virtual reality try on application </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/us/app/la-mer-virtual-expert/id1101401346?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://play.google.com/store/apps/details?id=com.lamer.virtualexpert"><img src="src/Play_Store_Badge.png" /></a>
+                        </div>
+                    </div>
+                    <!-- /Lamer -->
+                    </br>
+                    <!-- Rimmel get the look -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="getthelook.html"><img style="border-radius: 7.5px;" src="src/getthelook/GTL_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="getthelook.html"> Rimmel London - Get the look </a></h5><em><span> iOS & android virtual reality try on application </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/gb/app/get-the-look-rimmel-london/id1120244830?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://play.google.com/store/apps/details?id=com.rimmel.stealthelook"><img src="src/Play_Store_Badge.png" /></a>
+                        </div>
+                    </div>
+                    <!-- /Rimmel get the look -->
+                    </br>
+                    <!-- ManiMatch -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="manimatch.html"><img style="border-radius: 7.5px;" src="src/manimatch/ManiMatch_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="manimatch.html"> Sally Hansen - ManiMatch </a></h5><em><span> iOS & android augmented reality application </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/us/app/manimatch/id1033341492?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://play.google.com/store/apps/details?id=com.holition.sallyhansen.manimatch&hl=en"><img src="src/Play_Store_Badge.png" /></a>
+                        </div>
+                    </div>
+                    <!-- /ManiMatch -->
+                    </br>
+                    <!-- Andrew_Stellitano -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="comingsoon.html"><img style="border-radius: 7.5px;" src="src/andrewstellitano/AndrewStellitano_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="comingsoon.html"> Project (O) </a></h5><em><span> iOS augmented reality application </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/us/app//id971143229?ls=1&mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <img src="src/cross.png" />
+                        </div>
+                    </div>
+                    <!-- /Andrew_Stellitano -->
+                    </br>
+                    <!-- Arts Trail E11 -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="comingsoon.html"><img style="border-radius: 7.5px;" src="src/artstrail/ArtsTrail_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="comingsoon.html"> Arts Trail E11 </a></h5><em><span> iOS augmented reality application </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/us/app/arts-trail-e11/id892511083?ls=1&mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <img src="src/cross.png" />
+                        </div>
+                    </div>
+                    <!-- /Arts Trail E11 -->
+                    </br>
+                    <!-- Hemyca -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="hemyca.html"><img style="border-radius: 7.5px;" src="src/hemyca/Hemyca_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="hemyca.html"> Hemyca </a></h5><em><span> iOS augmented reality application </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/us/app/hemyca-ss14/id698165272?mt=88"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <img src="src/cross.png" />
+                        </div>
+                    </div>
+                    <!-- /Hemyca -->
+                    </br>
+                    <!-- ateliermayer -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="ateliermayer.html"><img style="border-radius: 7.5px;" src="src/ateliermayer/AtelierMayer_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="ateliermayer.html"> Atelier Mayer </a></h5><em><span> iOS augmented reality application </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/gb/app/atelier-mayer/id655499452?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <img src="src/cross.png" />
+                        </div>
+                    </div>
+                    <!-- /ateliermayer -->
+                    </br>
+                    <!-- gjfusion -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="fusion.html"><img style="border-radius: 7.5px;" src="src/gjfusion/GJFusion_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="fusion.html"> Georg Jensen Fusion </a></h5><em><span> iOS augmented reality application </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/gb/app/georg-jensen-fusion/id570244215?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <img src="src/cross.png" />
+                        </div>
+                    </div>
+                    <!-- /gjfusion -->
+                    </br>
+                    <!-- pgi -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="pgi.html"><img style="border-radius: 7.5px;" src="src/pgi/PGI_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="pgi.html"> Platinum Guild </a></h5><em><span> iOS augmented reality application </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/gb/app/platinum-guild/id586903990?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <img src="src/cross.png" />
+                        </div>
+                    </div>
+                    <!-- /pgi -->
+                    </br>
+                    <!-- Rollie -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="rollie.html"><img style="border-radius: 7.5px;" src="src/rollie/Rollie_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="rollie.html"> Rollie </a></h5><em><span> iOS platformer game </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="https://itunes.apple.com/gb/app/rollie-hd/id557592912?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <img src="src/cross.png" />
+                        </div>
+                    </div>
+                    <!-- /Rollie -->
+                    </br>
+                    <!-- todo360 -->
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <a href="todo360.html"><img style="border-radius: 7.5px;" src="src/todo360/Todo360_Thumb.jpg" alt="" /></a>
+                        </div>
+                        <div class="col-sm-4">
+                            <div>
+                                <h5><a href="todo360.html"> To-Do 360 </a></h5><em><span> iOS native application </span></em></div>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <a href="http://itunes.apple.com/us/app/to-do-360/id461036861?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                        </div>
+                        <div class="col-sm-3" align='center'>
+                            <img src="src/cross.png" />
+                        </div>
+                    </div>
+                    <!-- /todo360 -->
+                </div>
+
+            </section>
+            <!-- /#about -->
+
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.body-wrapper -->
+    <script src="style/js/jquery.min.js"></script>
+    <script src="style/js/bootstrap.min.js"></script>
+    <script src="style/js/jquery.themepunch.tools.min.js"></script>
+    <script src="style/js/classie.js"></script>
+    <script src="style/js/plugins.js"></script>
+    <script src="style/js/scripts.js"></script>
+    <script>
+        $.backstretch(["style/images/art/bg2.jpg"]);
+    </script>
+</body>
+
+</html>

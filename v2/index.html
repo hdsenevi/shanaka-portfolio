@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="style/images/favicon.png">
+    <title>Shanaka 'SHa' Senevirathne | Programming Portfolio</title>
+    <!-- Bootstrap core CSS -->
+    <link href="style/css/bootstrap.min.css" rel="stylesheet">
+    <link href="style/css/plugins.css" rel="stylesheet">
+    <link href="style/css/prettify.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+    <link href="style/css/color/blue.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,800,700,600,500,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,400italic' rel='stylesheet' type='text/css'>
+    <link href="style/type/fontello.css" rel="stylesheet">
+    <link href="style/type/budicons.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="style/js/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+      <![endif]-->
+    <!-- Show random other projects -->
+    <script>
+        function shuffle(array) {
+            var currentIndex = array.length,
+                temporaryValue, randomIndex;
+            // While there remain elements to shuffle...
+            while (0 !== currentIndex) {
+                // Pick a remaining element...
+                randomIndex = Math.floor(Math.random() * currentIndex);
+                currentIndex -= 1;
+
+                // And swap it with the current element.
+                temporaryValue = array[currentIndex];
+                array[currentIndex] = array[randomIndex];
+                array[randomIndex] = temporaryValue;
+            }
+            return array;
+        }
+
+        function loadOtherProjects() {
+            var people = [];
+            $.getJSON('otherprojs.json', function (data) {
+                data.otherprojs = shuffle(data.otherprojs);
+                var noofproj = 0;
+                $.each(data.otherprojs, function (i, f) {
+                    if (noofproj < 3 && f.projid !== '') {
+                        noofproj = noofproj + 1;
+                        var tblRow = '<li><figure class="frame pull-left"><div class="icon-overlay"><a href="' + f.urllink + '"><img src="' + f.image + '" alt="" /></a></div></figure><div class="meta"><h5><a href="' + f.urllink +
+                            '">' + f.title + '</a></h5><em><span>' + f.description + '</span></em></div></li>'
+                        $(tblRow).appendTo("#userdata");
+                    }
+                });
+            });
+        };
+        window.onload = loadOtherProjects;
+    </script>
+    <!-- Show random other projects -->
+</head>
+
+<body class="full-layout" onload="loadOtherProjects();">
+    <div id="preloader">
+        <div id="status">
+            <div class="spinner"></div>
+        </div>
+    </div>
+    <div class="body-wrapper">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <a class="btn responsive-menu" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i></i>
+                </a>
+                <div class="navbar-brand text-center">
+                    <a href="index.html">
+                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png" class="retina"
+                        />
+                    </a>
+                </div>
+                <!-- /.navbar-brand -->
+            </div>
+            <!-- /.navbar-header -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="current">
+                        <a href="./index.html#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a href="./downloads.html">Downloads</a>
+                    </li>
+                    <li>
+                        <a href="./index.html#cv">CV</a>
+                    </li>
+                    <li>
+                        <a href="./about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="./contact.html">Contact</a>
+                    </li>
+                    <li>
+                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220">
+                            <i class="icon-heart-1"></i>
+                            <span>Elsewhere</span>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.navbar-nav -->
+            </div>
+            <!-- /.navbar-collapse -->
+            <div id="elsewhere" style="display:none;">
+                <h1>Me, Elsewhere</h1>
+                <div class="divide20"></div>
+                <ul class="social">
+                    <li>
+                        <a href="http://uk.linkedin.com/in/shanakas">
+                            <i class="icon-s-linkedin"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.twitter.com/hdsenevi">
+                            <i class="icon-s-twitter"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.facebook.com/hdsenevi">
+                            <i class="icon-s-facebook"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#elsewhere -->
+        </nav>
+        <!-- /.navbar -->
+        <div class="container inner" name="portfolio">
+            <div class="blog grid-view row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="post box">
+                        <p class="welcomeLead">Welcome to my programming portfolio. This site is dedicated to showcasing my work on games, graphics
+                            and application programming.</p>
+                        <p class="welcomeLead">I have over 7 years industry experience and currently work as a Senior Mobile Developer at
+                            <a href="https://www.ofx.com">OFX</a>.</P>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12">
+                    <div class="blog-posts">
+                        <div class="isotope row">
+                            <!-- EatToLive -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="eattolive.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/eattolive/EatToLive_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Personal</span>
+                                        <span class="date">Desktop game</span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="eattolive.html">Eat To Live</a>
+                                    </h2>
+                                    <p>Play not one, but two characters in this infinite runner game where you are tasked with
+                                        eating food while jumping over bugs. Lose one character and you will lose the game.</p>
+                                </div>
+                            </div>
+                            <!-- /EatToLive -->
+                            <!-- BattleCars -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="battlecars.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/battlecars/BattleCars_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Personal</span>
+                                        <span class="date">Desktop game</span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="battlecars.html">Battle Cars</a>
+                                    </h2>
+                                    <p>A Unity 3d twin stick shooter game where players will get to shoot missiles at one another
+                                        with cars… 🚀</p>
+                                </div>
+                            </div>
+                            <!-- /BattleCars -->
+                            <!-- 3DSafety -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="3dsafety.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/3dsafety/3DSafety_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS application</span>
+                                        <span class="comments">
+                                            <a href="https://itunes.apple.com/us/app/3dsafety/id816076338?ls=1&mt=8">Complete, on Apple app store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="getthelook.html">3D Safety iOS application</a>
+                                    </h2>
+                                    <p>3D Safety's web application allows you to manage people, plant and process on site more
+                                        efficiently using all the great features of 3DSafety plus much more. We’ve created
+                                        this application so you can get one touch access to people and plant management as
+                                        well as all of the great features of the 3D Safety mobile website and even more.</p>
+                                </div>
+                            </div>
+                            <!-- /3DSafety -->
+                            <!-- Get the look -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="getthelook.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/getthelook/GTL_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS & android application</span>
+                                        <span class="comments">
+                                            <a href="https://itunes.apple.com/gb/app/get-the-look-rimmel-london/id1120244830?mt=8">Complete, on Apple app store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                        <span class="comments">
+                                            <a href="https://play.google.com/store/apps/details?id=com.rimmel.stealthelook">Complete, on Play store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="getthelook.html">Rimmel London - Get the look</a>
+                                    </h2>
+                                    <p>Rimmel London has introduced the first-ever personalised augmented reality mirror, which
+                                        lets you try out make-up styles from the streets and pages of your favourite magazine.
+                                        For the very FIRST TIME, you can point your smartphone at a friend, beauty ad, a
+                                        photo or a person’s made-up face then virtually capture a look using colour-matched
+                                        cosmetics by Rimmel.</p>
+                                </div>
+                            </div>
+                            <!-- /Get the look -->
+                            <!-- ManiMatch -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="manimatch.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/manimatch/ManiMatch_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS & android application</span>
+                                        <span class="comments">
+                                            <a href="https://itunes.apple.com/us/app/manimatch/id1033341492?mt=8">Complete, on Apple app store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                        <span class="comments">
+                                            <a href="https://play.google.com/store/apps/details?id=com.holition.sallyhansen.manimatch&hl=en">Complete, on Play store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="manimatch.html">Sally Hansen - ManiMatch</a>
+                                    </h2>
+                                    <p>Finding your perfect match has never been so easy. With a quick scan of your hand you
+                                        can unlock over 200 shades of Sally Hansen® nail polish to try-on, instantly. Using
+                                        cutting-edge, proprietary technology ManiMatch™ generates personalized-for-your-skin-tone
+                                        color suggestions on demand. There’s no uploading, picture-taking or manual data
+                                        entry, as the app works in real time on your hand.</p>
+                                </div>
+                            </div>
+                            <!-- /ManiMatch -->
+                            <!-- iCube -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="icube.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/icube/ICube_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS application</span>
+                                        <span class="comments">
+                                            <a href="#">Complete
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="icube.html">Moscow iCube</a>
+                                    </h2>
+                                    <p>‘Moscow iCube’ is an iOS augmented Reality application showcasing 'iCube' building in
+                                        Moscow. This app augments the 'iCube' building, it's surrounding area as well as
+                                        the traffic flow around the building.</p>
+                                </div>
+                            </div>
+                            <!-- /iCube -->
+                            <!-- Hemyca -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="hemyca.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/hemyca/Hemyca_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS application</span>
+                                        <span class="comments">
+                                            <a href="https://itunes.apple.com/us/app/hemyca-ss14/id698165272?mt=88">Complete, on Apple app store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="hemyca.html">Hemyca</a>
+                                    </h2>
+                                    <p>‘Hemyca’ is an iOS augmented Reality application showcasing an interactive sneak preview
+                                        of HEMYCA’s spring summer ’14 collection. Experience your own personal fashion show
+                                        of 5 key outfits from HEMYCA’s Spring Summer ’14 collection, as well as in-depth
+                                        details, making of videos and much more. </p>This app is currently available in
+                                    <a href="https://itunes.apple.com/us/app/hemyca-ss14/id698165272?mt=8">Apple app store</a>.
+                                </div>
+                            </div>
+                            <!-- /Hemyca -->
+                            <!-- Atelier Mayer -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="ateliermayer.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/ateliermayer/AtelierMayer_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS application</span>
+                                        <span class="comments">
+                                            <a href="https://itunes.apple.com/gb/app/atelier-mayer/id655499452?mt=8">Complete, on Apple app store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="ateliermayer.html">Atelier Mayer</a>
+                                    </h2>
+                                    <p>‘Atelier Mayer’ is an iOS augmented Reality application showcasing an interactive sneak
+                                        preview of the life of Madame Mayer, inviting you to discover her luxury vintage
+                                        pieces using augmented reality. </p>This app is currently available in
+                                    <a href="https://itunes.apple.com/gb/app/atelier-mayer/id655499452?mt=8">Apple app store</a>.
+                                </div>
+                            </div>
+                            <!-- /Atelier Mayer -->
+                            <!-- OgilvyAction - Dunhill -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="dunhill.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/dunhill/Dunhill_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS application</span>
+                                        <span class="comments">
+                                            <a href="#">Complete
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="dunhill.html">OgilvyAction - Dunhill</a>
+                                    </h2>
+                                    <p>‘OgilvyAction - Dunhill’ is an iOS augmented Reality application showcasing an animation
+                                        of the Dunhill special anniversary pack.</p>
+                                </div>
+                            </div>
+                            <!-- /OgilvyAction - Dunhill -->
+                            <!-- Georg Jensen Fusion -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="fusion.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/gjfusion/GJFusion_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS application</span>
+                                        <span class="comments">
+                                            <a href="https://itunes.apple.com/gb/app/georg-jensen-fusion/id570244215?mt=8">Complete, on Apple app store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="fusion.html">Georg Jensen Fusion</a>
+                                    </h2>
+                                    <p>‘Georg Jensen Fusion’ is an iOS augmented Reality application showcasing an animation
+                                        of the Georg Jensen 'Fusion' ring. The app links to the Georg Jenson ad campaign
+                                        and their website where you can build your own Fusion ring and post to various social
+                                        media sites. </p>This app is currently available in
+                                    <a href="https://itunes.apple.com/gb/app/georg-jensen-fusion/id570244215?mt=8">Apple app store</p>
+                                </div>
+                            </div>
+                            <!-- /Georg Jensen Fusion -->
+                            <!-- HolitionDemo -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="holitiondemoshowcase.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/holitiondemo/HolitionDemo_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS application</span>
+                                        <span class="comments">
+                                            <a href="#">Complete
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="holitiondemoshowcase.html">Holition Demo Showcase</a>
+                                    </h2>
+                                    <p>‘Holition Demo Showcase’ is an iOS augmented Reality application showcasing a handful
+                                        of projects that Holition has completed over the years. This is an internal Holition
+                                        app that is been used to demonstrate company mobile technologies. This app is primarily
+                                        run on an iPad and features more that 10 high profile brand project that Holition
+                                        was involved in creating.</p>
+                                </div>
+                            </div>
+                            <!-- /HolitionDemo -->
+                            <!-- PGI -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="pgi.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/pgi/PGI_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS application</span>
+                                        <span class="comments">
+                                            <a href="https://itunes.apple.com/gb/app/platinum-guild/id586903990?mt=8">Complete, on Apple app store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="pgi.html">Platinum Guild</a>
+                                    </h2>
+                                    <p>‘Platinum Guild’ is an iOS augmented reality application that is an easy to use sales
+                                        tool which uses interactive technology to explain the unique qualities that make
+                                        platinum the best choice for jewelry. </p>Currently available in
+                                    <a href="https://itunes.apple.com/gb/app/platinum-guild/id586903990?mt=8">
+                                        Apple app store.</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /PGI -->
+                            <!-- Peninsula -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="peninsula.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/peninsula/Peninsula_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS & Android application</span>
+                                        <span class="comments">
+                                            <a href="#">Complete, bespoke app not in app stores
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="peninsula.html">Peninsula</a>
+                                    </h2>
+                                    <p>‘Peninsula’ is an iOS and Android virtual reality / augmented reality application that
+                                        allows the user to navigate and interact with a life size Peninsula hotel suite from
+                                        their tablet devices. This application was created as a means for the customer to
+                                        trial and walks about the hotel suite and gets a feel for the size and sophistication
+                                        of the suite. This app consists of high-end graphics and in most cases is pushing
+                                        the limits of the specific mobile platform it targeted.</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /Peninsula -->
+                            <!-- Rollie -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="rollie.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/rollie/Rollie_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">Game</span>
+                                        <span class="comments">
+                                            <a href="https://itunes.apple.com/gb/app/rollie-hd/id557592912?mt=8">Complete, on Apple app store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="rollie.html">Rollie</a>
+                                    </h2>
+                                    <p>A fun filled iOS and Android gravity changing platformer game with amazing visuals and
+                                        fast-pased gameplay. </p>Currently available in
+                                    <a href="https://itunes.apple.com/gb/app/rollie-hd/id557592912?mt=8">
+                                        Apple app store</a>.
+                                    <a href="https://itunes.apple.com/gb/app/rollie-hd/id557592912?mt=8"></a>
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /Rollie -->
+                            <!-- To-Do 360 -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="todo360.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/todo360/Todo360_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">iOS native Application</span>
+                                        <span class="comments">
+                                            <a href="http://itunes.apple.com/us/app/to-do-360/id461036861?mt=8">Complete, on Apple app store
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="todo360.html">To-Do 360</a>
+                                    </h2>
+                                    <p>This iOS application, which runs on both iPhones and iPads, is a todo list and a task
+                                        manager. One can attach images and audio recordings to tasks. And also set alarms
+                                        and make the tasks trigger when go to a certain place. With tight integration with
+                                        Google docs to synch to-dos to your Google docs account. </p>You can find out more
+                                    about the app from
+                                    <a href="http://itunes.apple.com/us/app/to-do-360/id461036861?mt=8">Appple app store link</p>
+                                </div>
+                            </div>
+                            <!-- /To-Do 360 -->
+                            <!-- Design an athlete -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="designanathlete.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/daa/DAA_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">Desktop Application</span>
+                                        <span class="comments">
+                                            <a href="#">Complete
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="designanathlete.html">Design an athlete</a>
+                                    </h2>
+                                    <p>This is a touch screen interactive done working with Museums Sheffield. It was installed
+                                        at Weston Park Museum in Sheffield for 9 months before moving to the V&A Museum.
+                                        In Design An Athlete you can create an athlete by selecting various body and muscle
+                                        types, be careful though as your decisions will affect your athlete's performance
+                                        in your chosen event.</p>
+                                </div>
+                                <!-- /.post -->
+                            </div>
+                            <!-- /Design an athlete -->
+                            <!-- Dance Star -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="dancestar.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/ds/DS_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional</span>
+                                        <span class="date">Desktop Application</span>
+                                        <span class="comments">
+                                            <a href="#">Complete
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="dancestar.html">Dance Star</a>
+                                    </h2>
+                                    <p>This is an exergame to encourage physical activity/exercise among children. The users
+                                        interact with the game through a special device called ‘Smart Floor’ which detects
+                                        human motion through several load cells.</p>
+                                </div>
+                                <!-- /.post -->
+                            </div>
+                            <!-- /Dance Star -->
+                            <!-- Open Water Warfare -->
+                            <div class="col-md-4 col-sm-12 post-grid">
+                                <div class="post box">
+                                    <figure class="frame main">
+                                        <a href="openwaterwarfare.html">
+                                            <div class="text-overlay">
+                                                <div class="info">
+                                                    <span>Read More</span>
+                                                </div>
+                                            </div>
+                                            <img src="src/oww/OWW_Main.jpg" alt="" />
+                                        </a>
+                                    </figure>
+                                    <div class="meta">
+                                        <span class="category">Professional / Research project</span>
+                                        <span class="date">Desktop Application</span>
+                                        <span class="comments">
+                                            <a href="#">Complete
+                                                <i class="icon-ok-circle"></i>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <h2 class="post-title">
+                                        <a href="openwaterwarfare.html">Serious game for Olympic 2012</a>
+                                    </h2>
+                                    <p>This is an environment visualization research project developed in collaboration with
+                                        UK Sports Council and Sheffield Hallam University’s Centre for Sports Engineering
+                                        Research.
+                                    </p>
+                                </div>
+                                <!-- /.post -->
+                            </div>
+                            <!-- /Open Water Warfare -->
+                        </div>
+                        <!-- /.isotope -->
+                    </div>
+                    <!-- /.blog-posts -->
+                    <div class="pagination box" name="cv">
+                        <h3>CV</h3>
+                        <div>
+                            <a href="https://drive.google.com/file/d/0B7E0gr40A_olQk9sWlNpQzQwTUE/view?usp=sharing" class="btn-green btn">To view my CV, please click here</a>
+                        </div>
+                        <div>
+                            <a href="src/cv/Resume - Shanaka senevirathne.pdf" class="btn-blue btn">to download cv, right click here and press 'save link as'</a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="pagination box">
+                        <h3>Feel Free to Drop Me a Line</h3>
+                        <p>
+                            <span class="lite1">Tel:</span> +61 (0) 414 673 400
+                            <br />
+                            <span class="lite1">E-mail:</span>
+                            <a href="mailto:shanaka36@gmail.com" title="Email Me">shanaka36@gmail.com</a>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="pagination box">
+                        <p class="pull-left">© Shanaka 'SHa' Senevirathne 2018. All rights reserved. Design by
+                            <a href="http://elemisfreebies.com">elemis</a>.</p>
+                    </div>
+                    <!-- /.pagination -->
+                </div>
+                <!-- /.content -->
+            </div>
+            <!-- /.blog -->
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- /.body-wrapper -->
+    <script src="style/js/jquery.min.js"></script>
+    <script src="style/js/bootstrap.min.js"></script>
+    <script src="style/js/jquery.themepunch.tools.min.js"></script>
+    <script src="style/js/classie.js"></script>
+    <script src="style/js/plugins.js"></script>
+    <script src="style/js/scripts.js"></script>
+    <script>
+        $.backstretch(["style/images/art/bg2.jpg"]);
+    </script>
+</body>
+
+</html>
