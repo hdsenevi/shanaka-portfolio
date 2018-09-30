@@ -55,10 +55,10 @@
 
         function loadOtherProjects() {
             var people = [];
-            $.getJSON('otherprojs.json', function(data) {
+            $.getJSON('otherprojs.json', function (data) {
                 data.otherprojs = shuffle(data.otherprojs);
                 var noofproj = 0;
-                $.each(data.otherprojs, function(i, f) {
+                $.each(data.otherprojs, function (i, f) {
                     if (noofproj < 3 && f.projid !== 'manimatch') {
                         noofproj = noofproj + 1;
                         var tblRow = '<li><figure class="frame pull-left"><div class="icon-overlay"><a href="' + f.urllink + '"><img src="' + f.image + '" alt="" /></a></div></figure><div class="meta"><h5><a href="' + f.urllink +
@@ -85,7 +85,8 @@
                 <a class="btn responsive-menu" data-toggle="collapse" data-target=".navbar-collapse"><i></i></a>
                 <div class="navbar-brand text-center">
                     <a href="index.html">
-                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png" class="retina" />
+                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png"
+                            class="retina" />
                     </a>
                 </div>
                 <!-- /.navbar-brand -->
@@ -112,7 +113,8 @@
                         <a href="./contact.html">Contact</a>
                     </li>
                     <li>
-                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220"><i class="icon-heart-1"></i><span>Elsewhere</span></a>
+                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220"><i
+                                class="icon-heart-1"></i><span>Elsewhere</span></a>
                     </li>
                 </ul>
                 <!-- /.navbar-nav -->
@@ -138,22 +140,51 @@
                             <div class="meta">
                                 <span class="category">Professional</span>
                                 <span class="date">iOS & androind application</span>
-                                <span class="comments"><a href="https://itunes.apple.com/us/app/manimatch/id1033341492?mt=8">Complete, on Apple app store<i class="icon-ok-circle"></i></a></span>
-                                <span class="comments"><a href="https://play.google.com/store/apps/details?id=com.holition.sallyhansen.manimatch&hl=en">Complete, on Play store<i class="icon-ok-circle"></i></a></span>
+                                <span class="date">Complete</span>
+                                <span class="comments"><a href="https://itunes.apple.com/us/app/manimatch/id1033341492?mt=8">
+                                        App store <i class="icon-ok-circle"></i></a></span>
+                                <span class="comments"><a href="https://play.google.com/store/apps/details?id=com.holition.sallyhansen.manimatch&hl=en">
+                                        Play store <i class="icon-ok-circle"></i></a></span>
                             </div>
                             <h2 class="post-title"><a href="#">Sally Hansen - ManiMatch</a></h2>
-                            <p>'ManiMatch™ offers instant-scan technology and 3D augmented reality to try-on over 200 Sally Hansen shades'</p>
+                            <p>'ManiMatch™ offers instant-scan technology and 3D augmented reality to try-on over 200
+                                Sally Hansen shades'</p>
                             <figure class="frame">
                                 <img src="src/manimatch/ManiMatch_Main.jpg" alt="" />
                             </figure>
+
+                            <h3>Downloads</h3>
+                            <div class="row">
+                                <div class="col-sm-3" align='center'>
+                                    <a href="https://itunes.apple.com/us/app/manimatch/id1033341492?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                                </div>
+                                <div class="col-sm-3" align='center'>
+                                    <a href="https://play.google.com/store/apps/details?id=com.holition.sallyhansen.manimatch&hl=en"><img
+                                            src="src/Play_Store_Badge.png" /></a>
+                                </div>
+                            </div>
+                            <br>
+
                             <h3>Introduction : WORLD'S FIRST EVER Virtual Try-on for Nail Colours in Real-Time</h3>
-                            <p>Building on next-generation augmented reality technology, Sally Hansen the #1-selling nail colour and nail care brand in the US is transforming the shopping experience with the new ManiMatch™ mobile app. Users can try on the
-                                rainbow of over 200 Sally Hansen nail polish shades in real time, on their nails, before they buy. A simple scan of the user’s hand from any smartphone enables the user to instantly consider and curate her own colour choices.
-                                There’s no uploading, picture-taking or manual data entry, as the app works in real time. It also generates personalized-for-her-skin-tone colour suggestions on demand; using cutting-edge, proprietary technology, the app
-                                senses and analyzes the pigments in each user’s hand, then tailors its polish-shade suggestions to the ones optimally flattering to her skin.</p>
-                            <p>Holition’s innovative technology uses bespoke skin tone analysis algorithms to map the hand’s movement and find the specific points on the hand. It tracks the individual nuances of the user’s hands and nails, analyzes skin
-                                tone, and photo-realistically simulates nail polish shades, plus shine: the finished manicure appears instantly on the user’s hand in 3D”. ManiMatch™ generates shade suggestions across all Sally Hansen’s product lines,
-                                including Miracle Gel, Complete Salon Manicure, Insta-Dri and Xtreme Wear, so users can easily navigate and experience every colour they desire.</p>
+                            <p>Building on next-generation augmented reality technology, Sally Hansen the #1-selling
+                                nail colour and nail care brand in the US is transforming the shopping experience with
+                                the new ManiMatch™ mobile app. Users can try on the
+                                rainbow of over 200 Sally Hansen nail polish shades in real time, on their nails,
+                                before they buy. A simple scan of the user’s hand from any smartphone enables the user
+                                to instantly consider and curate her own colour choices.
+                                There’s no uploading, picture-taking or manual data entry, as the app works in real
+                                time. It also generates personalized-for-her-skin-tone colour suggestions on demand;
+                                using cutting-edge, proprietary technology, the app
+                                senses and analyzes the pigments in each user’s hand, then tailors its polish-shade
+                                suggestions to the ones optimally flattering to her skin.</p>
+                            <p>Holition’s innovative technology uses bespoke skin tone analysis algorithms to map the
+                                hand’s movement and find the specific points on the hand. It tracks the individual
+                                nuances of the user’s hands and nails, analyzes skin
+                                tone, and photo-realistically simulates nail polish shades, plus shine: the finished
+                                manicure appears instantly on the user’s hand in 3D”. ManiMatch™ generates shade
+                                suggestions across all Sally Hansen’s product lines,
+                                including Miracle Gel, Complete Salon Manicure, Insta-Dri and Xtreme Wear, so users can
+                                easily navigate and experience every colour they desire.</p>
                             <h3>Technical Details</h3>
                             <table width="100%" border="0">
                                 <tr>
@@ -162,7 +193,8 @@
                                 </tr>
                                 <tr>
                                     <td width="20%" valign="top">Libraries</td>
-                                    <td>FaceSDK by Holition, iOS SDK, android SDK, Unity 3d runtime, .Net 2.0, UnityGUI.</td>
+                                    <td>FaceSDK by Holition, iOS SDK, android SDK, Unity 3d runtime, .Net 2.0,
+                                        UnityGUI.</td>
                                 </tr>
                                 <tr>
                                     <td width="20%" valign="top">Tools</td>
@@ -170,8 +202,11 @@
                                 </tr>
                                 <tr>
                                     <td width="20%" valign="top">My contribution</td>
-                                    <td>I was responsible for all the code that went into making the application apart from the shader and tracking code base. This includes core app framework, animation system, user interfaces, networking, database (schema,
-                                        implementation and synchronization) and integration with proprietely Holition FaceSDK which does all the facial feature recongnition and visualization.</td>
+                                    <td>I was responsible for all the code that went into making the application apart
+                                        from the shader and tracking code base. This includes core app framework,
+                                        animation system, user interfaces, networking, database (schema,
+                                        implementation and synchronization) and integration with proprietely Holition
+                                        FaceSDK which does all the facial feature recongnition and visualization.</td>
                                 </tr>
                             </table>
                             <br>
@@ -183,14 +218,16 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="flex-video widescreen">
-                                                <iframe src="https://www.youtube.com/embed/N3uSOGPWrSQ" frameborder="0" allowfullscreen></iframe>
+                                                <iframe src="https://www.youtube.com/embed/N3uSOGPWrSQ" frameborder="0"
+                                                    allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="flex-video widescreen">
-                                                <iframe src="https://www.youtube.com/embed/IP9H03_LrPk" frameborder="0" allowfullscreen></iframe>
+                                                <iframe src="https://www.youtube.com/embed/IP9H03_LrPk" frameborder="0"
+                                                    allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -239,8 +276,11 @@
                             </div>
                             <br>
                             <h3>Description</h3>
-                            <p>Finding your perfect match has never been so easy. With a quick scan of your hand you can unlock over 200 shades of Sally Hansen® nail polish to try-on, instantly. Using cutting-edge, proprietary technology ManiMatch™ generates
-                                personalized-for-your-skin-tone color suggestions on demand. There’s no uploading, picture-taking or manual data entry, as the app works in real time on your hand.</p>
+                            <p>Finding your perfect match has never been so easy. With a quick scan of your hand you
+                                can unlock over 200 shades of Sally Hansen® nail polish to try-on, instantly. Using
+                                cutting-edge, proprietary technology ManiMatch™ generates
+                                personalized-for-your-skin-tone color suggestions on demand. There’s no uploading,
+                                picture-taking or manual data entry, as the app works in real time on your hand.</p>
                             <p>With ManiMatch you can:</p>
                             <ul>
                                 <li>Try on over 200 shades, instantly</li>
@@ -255,7 +295,8 @@
                             <ul>
                                 <li><a href="http://www.bustle.com/articles/81295-sally-hansens-new-app-will-let-you-try-on-nail-polish-shades-in-real-time-making">Bustle</a></li>
                                 <li><a href="http://mashable.com/2015/09/18/manimatch-app/#lLnqV8dwJSqi">Mashable</a></li>
-                                <li><a href="http://elle.in/beauty/news/sally-hansen-launches-new-manicure-app/">Elle - Sally Hansen</a></li>
+                                <li><a href="http://elle.in/beauty/news/sally-hansen-launches-new-manicure-app/">Elle -
+                                        Sally Hansen</a></li>
                             </ul>
                         </div>
                         <!-- /.post -->
@@ -273,12 +314,16 @@
                     <!-- /.widget -->
                     <div class="sidebox box widget">
                         <h3 class="widget-title section-title">Technical Details</h3>
-                        <p> <strong>My contribution</strong><br> I was responsible for all the code that went into making the application apart from the shader and tracking code base. This includes core app framework, animation system, user interfaces, networking,
-                            database (schema, implementation and synchronization) and integration with proprietely Holition FaceSDK which does all the facial feature recongnition and visualization.<br>
+                        <p> <strong>My contribution</strong><br> I was responsible for all the code that went into
+                            making the application apart from the shader and tracking code base. This includes core app
+                            framework, animation system, user interfaces, networking,
+                            database (schema, implementation and synchronization) and integration with proprietely
+                            Holition FaceSDK which does all the facial feature recongnition and visualization.<br>
                             <br>
                             <strong>Languages</strong><br> C#, Objective-C, Java, C++.<br>
                             <br>
-                            <strong>Libraries</strong><br> FaceSDK by Holition, iOS SDK, android SDK, Unity 3d runtime, .Net 2.0, UnityGUI.<br>
+                            <strong>Libraries</strong><br> FaceSDK by Holition, iOS SDK, android SDK, Unity 3d runtime,
+                            .Net 2.0, UnityGUI.<br>
                             <br>
                             <strong>Tools</strong><br> Unity 3d, XCode, Visual studio, Andrond studio.<br>
                         </p>

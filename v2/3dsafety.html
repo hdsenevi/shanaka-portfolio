@@ -55,10 +55,10 @@
 
         function loadOtherProjects() {
             var people = [];
-            $.getJSON('otherprojs.json', function(data) {
+            $.getJSON('otherprojs.json', function (data) {
                 data.otherprojs = shuffle(data.otherprojs);
                 var noofproj = 0;
-                $.each(data.otherprojs, function(i, f) {
+                $.each(data.otherprojs, function (i, f) {
                     if (noofproj < 3 && f.projid !== '3dsafety') {
                         noofproj = noofproj + 1;
                         var tblRow = '<li><figure class="frame pull-left"><div class="icon-overlay"><a href="' + f.urllink + '"><img src="' + f.image + '" alt="" /></a></div></figure><div class="meta"><h5><a href="' + f.urllink +
@@ -85,7 +85,8 @@
                 <a class="btn responsive-menu" data-toggle="collapse" data-target=".navbar-collapse"><i></i></a>
                 <div class="navbar-brand text-center">
                     <a href="index.html">
-                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png" class="retina" />
+                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png"
+                            class="retina" />
                     </a>
                 </div>
                 <!-- /.navbar-brand -->
@@ -112,7 +113,8 @@
                         <a href="./contact.html">Contact</a>
                     </li>
                     <li>
-                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220"><i class="icon-heart-1"></i><span>Elsewhere</span></a>
+                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220"><i
+                                class="icon-heart-1"></i><span>Elsewhere</span></a>
                     </li>
                 </ul>
                 <!-- /.navbar-nav -->
@@ -138,15 +140,29 @@
                             <div class="meta">
                                 <span class="category">Professional</span>
                                 <span class="date">iOS application</span>
-                                <span class="comments"><a href="https://itunes.apple.com/us/app/3dsafety/id816076338?ls=1&mt=8">Complete, on Apple app store<i class="icon-ok-circle"></i></a></span>
+                                <span class="date">Complete</span>
+                                <span class="comments"><a href="https://itunes.apple.com/us/app/3dsafety/id816076338?ls=1&mt=8">
+                                        App store <i class="icon-ok-circle"></i></a></span>
                             </div>
                             <h2 class="post-title"><a href="#">3D Safety iOS application</a></h2>
                             <figure class="frame">
                                 <img src="src/3dsafety/3DSafety_Main.jpg" alt="" />
                             </figure>
+
+                            <h3>Downloads</h3>
+                            <div class="row">
+                                <div class="col-sm-3" align='center'>
+                                    <a href="https://itunes.apple.com/us/app/3dsafety/id816076338?ls=1&mt=8"><img src="src/App_Store_Badge.png" /></a>
+                                </div>
+                            </div>
+                            <br>
+
                             <h3>Introduction</h3>
-                            <p>3D Safety's web application allows you to manage people, plant and process on site more efficiently using all the great features of 3DSafety plus much more. We’ve created this application so you can get one touch access to
-                                people and plant management as well as all of the great features of the 3D Safety mobile website and even more.</p>
+                            <p>3D Safety's web application allows you to manage people, plant and process on site more
+                                efficiently using all the great features of 3DSafety plus much more. We’ve created this
+                                application so you can get one touch access to
+                                people and plant management as well as all of the great features of the 3D Safety
+                                mobile website and even more.</p>
                             <p></p>
                             <h3>Technical Details</h3>
                             <table width="100%" border="0">
@@ -164,7 +180,9 @@
                                 </tr>
                                 <tr>
                                     <td width="20%" valign="top">My contribution</td>
-                                    <td>I was responsible for maintenance of the legacy (Objective-c) code base, implementing new features using a combination of Objective-C and Swift, updating some parts of legacy Objective-C code to Swift.</td>
+                                    <td>I was responsible for maintenance of the legacy (Objective-c) code base,
+                                        implementing new features using a combination of Objective-C and Swift,
+                                        updating some parts of legacy Objective-C code to Swift.</td>
                                 </tr>
                             </table>
                             <br>
@@ -216,12 +234,15 @@
                     <!-- /.widget -->
                     <div class="sidebox box widget">
                         <h3 class="widget-title section-title">Technical Details</h3>
-                        <p> <strong>My contribution</strong><br> I was responsible for maintenance of the legacy (Objective-c) code base, implementing new features using a combination of Objective-C and Swift, updating some parts of legacy Objective-C code
+                        <p> <strong>My contribution</strong><br> I was responsible for maintenance of the legacy
+                            (Objective-c) code base, implementing new features using a combination of Objective-C and
+                            Swift, updating some parts of legacy Objective-C code
                             to Swift.<br>
                             <br>
                             <strong>Languages</strong><br> Objective-C, Swift.<br>
                             <br>
-                            <strong>Libraries</strong><br> UIKit, Cocoa Touch, Core Data, Core Location, Core Animation, iOS SDK.<br>
+                            <strong>Libraries</strong><br> UIKit, Cocoa Touch, Core Data, Core Location, Core
+                            Animation, iOS SDK.<br>
                             <br>
                             <strong>Tools</strong><br> XCode, Instruments.<br>
                         </p>

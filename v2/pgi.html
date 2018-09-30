@@ -55,10 +55,10 @@
 
         function loadOtherProjects() {
             var people = [];
-            $.getJSON('otherprojs.json', function(data) {
+            $.getJSON('otherprojs.json', function (data) {
                 data.otherprojs = shuffle(data.otherprojs);
                 var noofproj = 0;
-                $.each(data.otherprojs, function(i, f) {
+                $.each(data.otherprojs, function (i, f) {
                     if (noofproj < 3 && f.projid !== 'pgi') {
                         noofproj = noofproj + 1;
                         var tblRow = '<li><figure class="frame pull-left"><div class="icon-overlay"><a href="' + f.urllink + '"><img src="' + f.image + '" alt="" /></a></div></figure><div class="meta"><h5><a href="' + f.urllink +
@@ -85,7 +85,8 @@
                 <a class="btn responsive-menu" data-toggle="collapse" data-target=".navbar-collapse"><i></i></a>
                 <div class="navbar-brand text-center">
                     <a href="index.html">
-                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png" class="retina" />
+                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png"
+                            class="retina" />
                     </a>
                 </div>
                 <!-- /.navbar-brand -->
@@ -112,7 +113,8 @@
                         <a href="./contact.html">Contact</a>
                     </li>
                     <li>
-                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220"><i class="icon-heart-1"></i><span>Elsewhere</span></a>
+                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220"><i
+                                class="icon-heart-1"></i><span>Elsewhere</span></a>
                     </li>
                 </ul>
                 <!-- /.navbar-nav -->
@@ -138,15 +140,31 @@
                             <div class="meta">
                                 <span class="category">Professional</span>
                                 <span class="date">iOS application</span>
-                                <span class="comments"><a href="https://itunes.apple.com/gb/app/platinum-guild/id586903990?mt=8">Complete, on Apple app store<i class="icon-ok-circle"></i></a></span>
+                                <span class="date">Complete</span>
+                                <span class="comments"><a href="https://itunes.apple.com/gb/app/platinum-guild/id586903990?mt=8">
+                                        App store <i class="icon-ok-circle"></i></a></span>
                             </div>
                             <h2 class="post-title"><a href="#">Platinum Guild</a></h2>
-                            <p>An easy to use sales tool which uses interactive technology to explain the unique qualities that make platinum the best choice for jewellery. Currently available in <a href="https://itunes.apple.com/gb/app/platinum-guild/id586903990?mt=8"> Apple app store</a>.</p>
+                            <p>An easy to use sales tool which uses interactive technology to explain the unique
+                                qualities that make platinum the best choice for jewellery. Currently available in <a
+                                    href="https://itunes.apple.com/gb/app/platinum-guild/id586903990?mt=8"> Apple app
+                                    store</a>.</p>
                             <figure class="frame">
                                 <img src="src/pgi/PGI_Main.jpg" alt="" />
                             </figure>
+
+                            <h3>Downloads</h3>
+                            <div class="row">
+                                <div class="col-sm-3" align='center'>
+                                    <a href="https://itunes.apple.com/gb/app/platinum-guild/id586903990?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                                </div>
+                            </div>
+                            <br>
+
                             <h3>Introduction</h3>
-                            <p>‘Platinum Guild’ is an iOS augmented reality application that is an easy to use sales tool which uses interactive technology to explain the unique qualities that make platinum the best choice for jewellery.</p>
+                            <p>‘Platinum Guild’ is an iOS augmented reality application that is an easy to use sales
+                                tool which uses interactive technology to explain the unique qualities that make
+                                platinum the best choice for jewellery.</p>
                             <h3>Technical Details</h3>
                             <table width="100%" border="0">
                                 <tr>
@@ -174,14 +192,16 @@
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="flex-video widescreen">
-                                                <iframe src="http://www.youtube.com/embed/dZvpvtAdvVM" frameborder="0" allowfullscreen></iframe>
+                                                <iframe src="http://www.youtube.com/embed/dZvpvtAdvVM" frameborder="0"
+                                                    allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="flex-video widescreen">
-                                                <iframe src="http://www.youtube.com/embed/qdZqtPPd3eE" frameborder="0" allowfullscreen></iframe>
+                                                <iframe src="http://www.youtube.com/embed/qdZqtPPd3eE" frameborder="0"
+                                                    allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>
@@ -246,11 +266,13 @@
                     <!-- /.widget -->
                     <div class="sidebox box widget">
                         <h3 class="widget-title section-title">Technical Details</h3>
-                        <p> <strong>My contribution</strong><br> I was responsible for all the code that went into making the application.<br>
+                        <p> <strong>My contribution</strong><br> I was responsible for all the code that went into
+                            making the application.<br>
                             <br>
                             <strong>Languages</strong><br> C#, Objective-C.<br>
                             <br>
-                            <strong>Libraries</strong><br> Vuforia SDK, iOS SDK, Unity 3d runtime, .Net 2.0, Sprite Manager 2, EZGUI.<br>
+                            <strong>Libraries</strong><br> Vuforia SDK, iOS SDK, Unity 3d runtime, .Net 2.0, Sprite
+                            Manager 2, EZGUI.<br>
                             <br>
                             <strong>Tools</strong><br> Unity 3d, XCode, Photoshop.<br>
                         </p>

@@ -55,10 +55,10 @@
 
         function loadOtherProjects() {
             var people = [];
-            $.getJSON('otherprojs.json', function(data) {
+            $.getJSON('otherprojs.json', function (data) {
                 data.otherprojs = shuffle(data.otherprojs);
                 var noofproj = 0;
-                $.each(data.otherprojs, function(i, f) {
+                $.each(data.otherprojs, function (i, f) {
                     if (noofproj < 3 && f.projid !== 'todo360') {
                         noofproj = noofproj + 1;
                         var tblRow = '<li><figure class="frame pull-left"><div class="icon-overlay"><a href="' + f.urllink + '"><img src="' + f.image + '" alt="" /></a></div></figure><div class="meta"><h5><a href="' + f.urllink +
@@ -85,7 +85,8 @@
                 <a class="btn responsive-menu" data-toggle="collapse" data-target=".navbar-collapse"><i></i></a>
                 <div class="navbar-brand text-center">
                     <a href="index.html">
-                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png" class="retina" />
+                        <img src="style/images/logo.png" alt="" data-src="style/images/logo.png" data-ret="style/images/logo@2x.png"
+                            class="retina" />
                     </a>
                 </div>
                 <!-- /.navbar-brand -->
@@ -112,7 +113,8 @@
                         <a href="./contact.html">Contact</a>
                     </li>
                     <li>
-                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220"><i class="icon-heart-1"></i><span>Elsewhere</span></a>
+                        <a href="#elsewhere" class="fancybox-inline" data-fancybox-width="325" data-fancybox-height="220"><i
+                                class="icon-heart-1"></i><span>Elsewhere</span></a>
                     </li>
                 </ul>
                 <!-- /.navbar-nav -->
@@ -138,16 +140,32 @@
                             <div class="meta">
                                 <span class="category">Professional</span>
                                 <span class="date">iOS native Application</span>
-                                <span class="comments"><a href="http://itunes.apple.com/us/app/to-do-360/id461036861?mt=8">Complete, on Apple app store<i class="icon-ok-circle"></i></a></span>
+                                <span class="date">Complete</span>
+                                <span class="comments"><a href="http://itunes.apple.com/us/app/to-do-360/id461036861?mt=8">
+                                        App store <i class="icon-ok-circle"></i></a></span>
                             </div>
                             <h2 class="post-title"><a href="#">Design an athlete</a></h2>
-                            <p>Create your own athlete by selecting various body and muscle types, enter into choosen event and email your creation.</p>
+                            <p>Create your own athlete by selecting various body and muscle types, enter into choosen
+                                event and email your creation.</p>
                             <figure class="frame">
                                 <img src="src/todo360/Todo360_Main.jpg" alt="" />
                             </figure>
+
+                            <h3>Downloads</h3>
+                            <div class="row">
+                                <div class="col-sm-3" align='center'>
+                                    <a href="http://itunes.apple.com/us/app/to-do-360/id461036861?mt=8"><img src="src/App_Store_Badge.png" /></a>
+                                </div>
+                            </div>
+                            <br>
+
                             <h3>Introduction</h3>
-                            <p>This iOS application which runs on both iPhones and iPads is a todo list and a task manager. One can attach images and audio recordings to tasks. And also set alarms and make the tasks trigger when goto a certain place. With
-                                tight intergration with Google docs to synch to-dos to your google docs account. You can find out more about the app from <a href="http://itunes.apple.com/us/app/to-do-360/id461036861?mt=8">Appple app store link</a>.</p>
+                            <p>This iOS application which runs on both iPhones and iPads is a todo list and a task
+                                manager. One can attach images and audio recordings to tasks. And also set alarms and
+                                make the tasks trigger when goto a certain place. With
+                                tight intergration with Google docs to synch to-dos to your google docs account. You
+                                can find out more about the app from <a href="http://itunes.apple.com/us/app/to-do-360/id461036861?mt=8">Appple
+                                    app store link</a>.</p>
                             <h3>Technical Details</h3>
                             <table width="100%" border="0">
                                 <tr>
@@ -164,7 +182,9 @@
                                 </tr>
                                 <tr>
                                     <td width="20%" valign="top">My contribution</td>
-                                    <td>I was responsible for about 90% of the core iPhone code base including intergration of Code Data and Google docs. A junior programmer later joined the project to update the app for iPad and maintain the project and
+                                    <td>I was responsible for about 90% of the core iPhone code base including
+                                        intergration of Code Data and Google docs. A junior programmer later joined the
+                                        project to update the app for iPad and maintain the project and
                                         give technical support.</td>
                                 </tr>
                             </table>
@@ -227,7 +247,8 @@
                     <div class="sidebox box widget">
                         <h3 class="widget-title section-title">Technical Details</h3>
                         <p> <strong>My contribution</strong>
-                            <br> I was responsible for most of the core iPhone code base including intergration of Code Data and Google docs API.
+                            <br> I was responsible for most of the core iPhone code base including intergration of Code
+                            Data and Google docs API.
                             <br>
                             <br>
                             <strong>Languages</strong>
