@@ -1,116 +1,130 @@
 {
-   "otherprojs": [
-      {
-         "projid": "3dsafety",
-         "image": "src/3dsafety/3DSafety_Thumb.jpg",
-         "title": "3D Safety iOS app",
-         "description": "iOS application",
-         "urllink": "3dsafety.html"
-     },
-     {
-        "projid": "getthelook",
-        "image": "src/getthelook/GTL_Thumb.jpg",
-        "title": "Rimmel London - Get the look",
-        "description": "iOS & android virtual reality try on application",
-        "urllink": "getthelook.html"
-    },
-     {
-        "projid": "manimatch",
-        "image": "src/manimatch/ManiMatch_Thumb.jpg",
-        "title": "Sally Hansen - ManiMatch",
-        "description": "iOS & android augmented reality application",
-        "urllink": "manimatch.html"
-    },
-     {
-        "projid": "icube",
-        "image": "src/icube/ICube_Thumb.jpg",
-        "title": "Moscow iCube",
-        "description": "iOS augmented reality application",
-        "urllink": "icube.html"
-    },
-	   {
-           "projid": "hemyca",
-           "image": "src/hemyca/Hemyca_Thumb.jpg",
-           "title": "Hemyca",
-           "description": "iOS augmented reality application",
-           "urllink": "hemyca.html"
-       },
-	   {
-           "projid": "ateliermayer",
-           "image": "src/ateliermayer/AtelierMayer_Thumb.jpg",
-           "title": "Atelier Mayer",
-           "description": "iOS augmented reality application",
-           "urllink": "ateliermayer.html"
-       },
-       {
-           "projid": "gjfusion",
-           "image": "src/gjfusion/GJFusion_Thumb.jpg",
-           "title": "Georg Jensen Fusion",
-           "description": "iOS augmented reality application",
-           "urllink": "fusion.html"
-       },
-       {
-           "projid": "dunhill",
-           "image": "src/dunhill/Dunhill_Thumb.jpg",
-           "title": "OgilvyAction - Dunhill",
-           "description": "iOS augmented reality application",
-           "urllink": "dunhill.html"
-       },
-       {
-           "projid": "holitiondemoshowcase",
-           "image": "src/holitiondemo/HolitionDemo_Thumb.jpg",
-           "title": "Holition Demo Showcase",
-           "description": "iOS augmented reality application",
-           "urllink": "holitiondemoshowcase.html"
-       },
-       {
-           "projid": "pgi",
-           "image": "src/pgi/PGI_Thumb.jpg",
-           "title": "Platinum Guild",
-           "description": "iOS augmented reality application",
-           "urllink": "pgi.html"
-       },
-       {
-           "projid": "peninsula",
-           "image": "src/peninsula/Peninsula_Thumb.jpg",
-           "title": "Peninsula",
-           "description": "iOS & Android application",
-           "urllink": "peninsula.html"
-       },
-       {
-           "projid": "rollie",
-           "image": "src/rollie/Rollie_Thumb.jpg",
-           "title": "Rollie",
-           "description": "iOS platformer game",
-           "urllink": "rollie.html"
-       },
-       {
-           "projid": "todo360",
-           "image": "src/todo360/Todo360_Thumb.jpg",
-           "title": "To-Do 360",
-           "description": "iOS native application",
-           "urllink": "todo360.html"
-       },
-       {
-           "projid": "daa",
-           "image": "src/daa/DAA_Thumb.jpg",
-           "title": "Design an athlete",
-           "description": "Desktop flash application",
-           "urllink": "designanathlete.html"
-       },
-       {
-           "projid": "ds",
-           "image": "src/ds/DS_Thumb.jpg",
-           "title": "Dance Star",
-           "description": "Desktop C# / XNA application",
-           "urllink": "dancestar.html"
-       },
-       {
-           "projid": "oww",
-           "image": "src/oww/OWW_Thumb.jpg",
-           "title": "Serious game for Olympic 2012",
-           "description": "Desktop C++ serious game",
-           "urllink": "openwaterwarfare.html"
-       }
-   ]
+    "otherprojs": [
+        {
+            "projid": "mlc",
+            "image": "src/mlc/MLC_Thumb.jpg",
+            "title": "MLC mobile app",
+            "description": "iOS & Android application",
+            "urllink": "mlc.html"
+        },
+        {
+            "projid": "ofx",
+            "image": "src/ofx/OFX_Thumb.jpg",
+            "title": "OFX mobile app",
+            "description": "iOS & Android application",
+            "urllink": "ofx.html"
+        },
+        {
+            "projid": "3dsafety",
+            "image": "src/3dsafety/3DSafety_Thumb.jpg",
+            "title": "3D Safety iOS app",
+            "description": "iOS application",
+            "urllink": "3dsafety.html"
+        },
+        {
+            "projid": "getthelook",
+            "image": "src/getthelook/GTL_Thumb.jpg",
+            "title": "Rimmel London - Get the look",
+            "description": "iOS & android virtual reality try on application",
+            "urllink": "getthelook.html"
+        },
+        {
+            "projid": "manimatch",
+            "image": "src/manimatch/ManiMatch_Thumb.jpg",
+            "title": "Sally Hansen - ManiMatch",
+            "description": "iOS & android augmented reality application",
+            "urllink": "manimatch.html"
+        },
+        {
+            "projid": "icube",
+            "image": "src/icube/ICube_Thumb.jpg",
+            "title": "Moscow iCube",
+            "description": "iOS augmented reality application",
+            "urllink": "icube.html"
+        },
+        {
+            "projid": "hemyca",
+            "image": "src/hemyca/Hemyca_Thumb.jpg",
+            "title": "Hemyca",
+            "description": "iOS augmented reality application",
+            "urllink": "hemyca.html"
+        },
+        {
+            "projid": "ateliermayer",
+            "image": "src/ateliermayer/AtelierMayer_Thumb.jpg",
+            "title": "Atelier Mayer",
+            "description": "iOS augmented reality application",
+            "urllink": "ateliermayer.html"
+        },
+        {
+            "projid": "gjfusion",
+            "image": "src/gjfusion/GJFusion_Thumb.jpg",
+            "title": "Georg Jensen Fusion",
+            "description": "iOS augmented reality application",
+            "urllink": "fusion.html"
+        },
+        {
+            "projid": "dunhill",
+            "image": "src/dunhill/Dunhill_Thumb.jpg",
+            "title": "OgilvyAction - Dunhill",
+            "description": "iOS augmented reality application",
+            "urllink": "dunhill.html"
+        },
+        {
+            "projid": "holitiondemoshowcase",
+            "image": "src/holitiondemo/HolitionDemo_Thumb.jpg",
+            "title": "Holition Demo Showcase",
+            "description": "iOS augmented reality application",
+            "urllink": "holitiondemoshowcase.html"
+        },
+        {
+            "projid": "pgi",
+            "image": "src/pgi/PGI_Thumb.jpg",
+            "title": "Platinum Guild",
+            "description": "iOS augmented reality application",
+            "urllink": "pgi.html"
+        },
+        {
+            "projid": "peninsula",
+            "image": "src/peninsula/Peninsula_Thumb.jpg",
+            "title": "Peninsula",
+            "description": "iOS & Android application",
+            "urllink": "peninsula.html"
+        },
+        {
+            "projid": "rollie",
+            "image": "src/rollie/Rollie_Thumb.jpg",
+            "title": "Rollie",
+            "description": "iOS platformer game",
+            "urllink": "rollie.html"
+        },
+        {
+            "projid": "todo360",
+            "image": "src/todo360/Todo360_Thumb.jpg",
+            "title": "To-Do 360",
+            "description": "iOS native application",
+            "urllink": "todo360.html"
+        },
+        {
+            "projid": "daa",
+            "image": "src/daa/DAA_Thumb.jpg",
+            "title": "Design an athlete",
+            "description": "Desktop flash application",
+            "urllink": "designanathlete.html"
+        },
+        {
+            "projid": "ds",
+            "image": "src/ds/DS_Thumb.jpg",
+            "title": "Dance Star",
+            "description": "Desktop C# / XNA application",
+            "urllink": "dancestar.html"
+        },
+        {
+            "projid": "oww",
+            "image": "src/oww/OWW_Thumb.jpg",
+            "title": "Serious game for Olympic 2012",
+            "description": "Desktop C++ serious game",
+            "urllink": "openwaterwarfare.html"
+        }
+    ]
 }
