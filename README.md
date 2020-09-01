@@ -4,8 +4,8 @@
 
 | Version of web site | Screenshot                                                                                                      |
 | ------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Version 2 (current) | ![version-2-screenshot.JPG](/Users/shanaka/Dropbox/My_Work/My_Web_Work/Portfolio/docs/version-2-screenshot.JPG) |
-| Version 1           | ![version-1-screenshot.JPG](/Users/shanaka/Dropbox/My_Work/My_Web_Work/Portfolio/docs/version-1-screenshot.JPG) |
+| Version 2 (current) | ![version-2-screenshot.JPG](/docs/version-2-screenshot.JPG) |
+| Version 1           | ![version-1-screenshot.JPG](/docs/version-1-screenshot.JPG) |
 
 ### Web hosting prices
 
