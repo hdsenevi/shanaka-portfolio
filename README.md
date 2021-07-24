@@ -9,6 +9,16 @@
 
 ### Web hosting prices
 
-* 16.36 USD
+~~Bigbytes.net (per annum)~~
 
-* 24 AUD
+* ~~USD 16.36~~
+* ~~AUD 24~~
+
+Netlify (per annum)
+
+* Free (for now and maybe forever from what I can tell) 
+
+### Domain (DNS)
+
+Bigbytes.net (per annum)
+* USD 23.29
