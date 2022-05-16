@@ -22,3 +22,9 @@ Netlify (per annum)
 
 Bigbytes.net (per annum)
 * USD 23.29
+
+# Deployment process 
+
+* taken care of by Netlify
+* no need to FTP any more
+* just push to github and boom
